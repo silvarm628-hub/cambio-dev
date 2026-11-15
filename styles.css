@@ -5,6 +5,7 @@
     --cor-verde: #35E67B;
     --cor-texto: #F5F7F6;
     --cor-borda: #33433B;
+    --cor-cabecalho: #0B1010
 }
 
 * {
@@ -30,19 +31,25 @@ header {
     justify-content: space-between;
     gap: 24px;
     padding: 24px 5%;
-    background-color: var(--cor-superficie);
+    background-color: var(--cor-cabecalho);
     border-bottom: 1px solid var(--cor-borda);
 }
 
 .logo {
+    display:flex;
+    align-items: center;
+    gap: 12px;
     font-size: 28px;
     font-weight: 700;
     color: var(--cor-texto);
 }
 
-.logo span {
-    color: var(--cor-verde);
+.logo texto {
+    color: var(--cor-texto);
 }
+ .logo-texto span {
+    color: var(--cor-verde);
+ } 
 
 nav {
     display: flex;
@@ -50,27 +57,57 @@ nav {
     gap: 32px;
 }
 
-nav a {
+.nav-link {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 30px;
     color: var(--cor-texto);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 16;
     font-weight: 500;
 }
+
+.nav-link.ativo {
+    background: #063d25;
+    border-color: #087A43;
+    color: var(--cor-verde);
+}
+
+.nav-link:not(.ativo):hover {
+    background: #063d25;
+    border-color: #087A43;
+    color: var(--cor-verde);
+}
+
 
 nav a:hover {
     color: var(--cor-verde);
 }
 
 #botao-tema {
-    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: var(--cor-cabecalho);
     color: var(--cor-texto);
-    border: 1px solid #52665B;
-    border-radius: 25px;
-    padding: 10px 16px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 50px;
     cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease,
+    border-color 0.3s ease;
+    
 }
 
 #botao-tema:hover {
+    background-color: var(--cor-superficie);
     border-color: var(--cor-verde);
 }
 
